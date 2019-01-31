@@ -1,4 +1,6 @@
+
 <header>
+
   <div class="header-logo">
     Ride
   </div>
@@ -14,5 +16,20 @@
   <div class="col-md-offset-4 col-md-4">
     <p><%= image_tag @man.image.url,style: "border-radius: 50%; width:  300px;height: 300px;" %></p>
     <h2><%= @man.name %></h2>
+
+
   </div>
+<form action="/stripe/create" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_QW3k217JcyxXeu6fHb7JhqkZ"
+    data-amount="99999"
+    data-name="Demo Site"
+    data-description="Example charge"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-currency="jpy">
+  </script>
+  <input type="hidden" name="men_id" value="<%= @man.id %>">
+</form>
 </div>

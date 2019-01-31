@@ -1,6 +1,26 @@
 class PostsController < ApplicationController
+
   def show
     @man = Man.find(params[:id])
+#############################
+#############################
+
+
+
+  end
+
+  def stripe_create
+    Stripe.api_key = "sk_test_k4Irva1BkiXLOcDgK5otCJk7"
+    #skを本番用に
+    token = params[:stripeToken]
+
+    charge = Stripe::Charge.create({
+        amount: 99999,
+        currency: 'jpy',
+        description: 'Example charge',
+        source: token,
+    })
+    redirect_to men_mypage_path(params[:men_id]),success: "決済が完了しました。"
   end
   def edit
     @man = Man.find(params[:id])
