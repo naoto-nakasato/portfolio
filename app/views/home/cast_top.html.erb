@@ -1,0 +1,30 @@
+<header>
+  <div class="header-logo">
+    Ride
+  </div>
+  <ul class="header-menus">
+    <li><%= link_to "ログイン", new_woman_session_path %></li>
+    <li><%= link_to "ログアウト", destroy_woman_session_path, method: :DELETE %></li>
+  </ul>
+</header>
+<div class="cast-top-hero-wrapper text-center">
+  <div class="container top-hero-container">
+    <h1 class="text-white">Ride</h1>
+    <h2 class="text-white">高時給で稼げる</h2>
+    <h3 class="text-white">エンタメマッチングアプリ</h3>
+    <h4 class="text-white">
+      <div class="col-md-offset-3 col-md-6">
+        <ul>
+          <%= link_to "キャスト登録はこちら", "/women/sign_up", class: 'btn btn-block btn-white'%>
+        </ul>
+      </div>
+
+        <div class="col-md-offset-3 col-md-6">
+        <ul>
+          <%= link_to "キャストを呼びたい方はこちら", "/", class: 'btn btn-block btn-white' %>
+          </ul>
+      </div>
+    </h4>
+    </div>
+  </div>
+</div>

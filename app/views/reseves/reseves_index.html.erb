@@ -1,0 +1,23 @@
+<header>
+  <div class="header-logo">
+    Ride
+  </div>
+  <ul class="header-menus">
+    <li><%= link_to "キャストを呼ぶ", new_man_session_path %></li>
+    <li><%= link_to "プロフィール", new_man_session_path %></li>
+    <li><%= link_to "予約確認", new_man_session_path %></li>
+    <li><%= link_to "ログアウト", destroy_man_session_path, method: :DELETE %></li>
+  </ul>
+</header>
+  <div class="col-md-offset-2 col-md-8">
+    <% @reseves.each do |reseve| %>
+      <div class="col-md-4">
+        <h3>
+        <%= reseve.place %>
+        <%= "#{reseve.people}人"%>
+        <%= reseve.date_time %>
+        <%= reseve.age %>
+        <%= "#{reseve.stay_time}時間" %>
+        </h3>
+      </div>
+    <% end %>

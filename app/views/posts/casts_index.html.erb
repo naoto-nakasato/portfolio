@@ -1,0 +1,27 @@
+<header>
+  <div class="header-logo">
+    Ride
+  </div>
+  <ul class="header-menus">
+    <li><%= link_to "キャストを呼ぶ", new_man_session_path %></li>
+    <li><%= link_to "プロフィール", new_man_session_path %></li>
+    <li><%= link_to "予約確認", new_man_session_path %></li>
+    <li><%= link_to "ログアウト", destroy_man_session_path, method: :DELETE %></li>
+  </ul>
+</header>
+  <div class="col-md-offset-2 col-md-8">
+    <% @casts.each do |cast| %>
+      <div style="margin: 100px 5%; ">
+        <div class="col-md-4">
+          <div class="cast-img">
+            <%= image_tag cast.image.url %>
+          </div>
+          <div class="cast-description">
+            <span><%= cast.age %> /</span>
+            <span> <%= cast.residence %> /</span>
+            <span><%= cast.name %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

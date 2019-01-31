@@ -1,0 +1,47 @@
+<header>
+  <div class="header-logo">
+    Ride
+  </div>
+  <ul class="header-menus">
+    <li><%= link_to "キャストを呼ぶ", new_man_session_path %></li>
+    <li><%= link_to "プロフィール", new_man_session_path %></li>
+    <li><%= link_to "予約確認", new_man_session_path %></li>
+    <li><%= link_to "ログアウト", destroy_man_session_path, method: :DELETE %></li>
+  </ul>
+</header>
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel">
+      <div class="panel-body">
+        <%= form_for @reseve do |f| %>
+          <label for="place">どこに呼びますか？</label>
+          <div class="form-group">
+            <%= f.select :place,["渋谷","六本木","新宿","銀座","西麻布","恵比寿"],class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="reseve[people]">人数</label>
+            <%= f.select :people,[1..6],class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="">予約日</label>
+            <%= date_field_tag :date,class: "form-control col-md-3" %>
+          </div>
+          <div class="form-group">
+            <label for="">予約時間</label>
+            <%= time_field_tag :time,class: "form-control col-md-3" %>
+          </div>
+          <div class="form-group">
+            <label for="reseve[age]">人数</label>
+            <%= f.select :age,["10代","20代前半","20代後半","30才以上"],class: "form-control"  %>
+          </div>
+          <div class="form-group">
+            <label for="reseve[stay_time]">所要時間</label>
+            <%= f.select :stay_time,[1..12],class: "form-control"  %><span>時間</span>
+          </div>
+          <%= f.hidden_field :man_id,value: params[:man_id] %>
+          <div class="form-group">
+            <%= f.submit "予約する",class: "btn btn-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
