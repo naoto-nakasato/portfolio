@@ -9,17 +9,17 @@
     <li><%= link_to "ログアウト", destroy_man_session_path, method: :DELETE %></li>
   </ul>
 </header>
-  <div class="col-md-offset-2 col-md-8">
+  <div class="col-md-offset-3 col-md-8">
     <div class="panel">
       <div class="panel-body">
         <%= form_for @reseve do |f| %>
           <label for="place">どこに呼びますか？</label>
           <div class="form-group">
-            <%= f.select :place,["渋谷","六本木","新宿","銀座","西麻布","恵比寿"],class: "form-control" %>
+            <%= f.select :place,["渋谷","六本木","新宿","銀座","西麻布","恵比寿","中目黒"],class: "form-control" %>
           </div>
           <div class="form-group">
             <label for="reseve[people]">人数</label>
-            <%= f.select :people,[1..6],class: "form-control" %>
+            <%= f.select :people,[1,2,3,4,5,6],class: "form-control" %>
           </div>
           <div class="form-group">
             <label for="">予約日</label>
@@ -35,11 +35,11 @@
           </div>
           <div class="form-group">
             <label for="reseve[stay_time]">所要時間</label>
-            <%= f.select :stay_time,[1..12],class: "form-control"  %><span>時間</span>
+            <%= f.select :stay_time,[1,2,3,4,5],class: "form-control"  %><span>時間</span>
           </div>
           <%= f.hidden_field :man_id,value: params[:man_id] %>
           <div class="form-group">
-            <%= f.submit "予約する",class: "btn btn-success" %>
+            <%= f.submit "次に進む(1/3)" %>
           </div>
         <% end %>
       </div>

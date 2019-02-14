@@ -24,10 +24,8 @@ Rails.application.routes.draw do
   patch "men/:id/update",to: "posts#update",as: "men_update"
   get "men/:id/profile",to: "posts#profile",as: "men_profile"
   post "stripe/create",to: "posts#stripe_create"
-  resources :reseves
   get "men/:id/reseves_index",to: "reseves#reseves_index",as: "men_reseves"
-
-
+  resources :reseves
   root 'home#top'
   get 'home/cast_top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

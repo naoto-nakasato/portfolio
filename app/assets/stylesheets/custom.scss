@@ -5,13 +5,41 @@ header {
   z-index: 1;
   width: 100%;
 }
-
-.header-logo {
+.top-header-logo {
   float: left;
   padding-left: 20px;
   color: white;
   font-size: 22px;
   line-height: 64px;
+}
+
+.header-logo {
+  float: left;
+  padding-left: 20px;
+  color: black;
+  font-size: 22px;
+  line-height: 64px;
+}
+
+.top-header-menus {
+  float: right;
+  padding-right: 20px;
+}
+
+.top-header-menus li {
+  float: left;
+  line-height: 64px;
+  font-size: 13px;
+  color: white;
+  padding-left: 15px;
+}
+.top-header-menus a {
+  float: left;
+  font-size: 13px;
+  color: white;
+}
+.top-header-menus .fa {
+  padding-right: 5px;
 }
 
 .header-menus {
@@ -30,21 +58,13 @@ header {
 .header-menus a {
   float: left;
   font-size: 13px;
-  color: white;
+  color: black;
 }
 
 .header-menus .fa {
   padding-right: 5px;
 }
 
-.header-menus input[type="submit"] {
-  padding: 0 20px;
-  float: left;
-  line-height: 64px;
-  color: white;
-  margin: 0;
-  font-size: 13px;
-}
 ul {
   list-style: none;
 }
@@ -108,6 +128,7 @@ h1 {
 .show-hero-wrapper {
   width: 100vw;
   height: 100vh;
+  background-attachment: scroll;
   background: url('orange.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -162,7 +183,7 @@ h1 {
 	box-shadow: 0 2px 0 #1B3D82;
 }
 
-.cast-img{
+.cast-img {
   width: 15vw;
   height:15vw;
   position: relative;
@@ -172,4 +193,51 @@ h1 {
   img {
     height:15vw;
   }
+}
+
+.panel {
+  font-size: 20px;
+  padding-top: 50px;
+}
+
+.form-group {
+  padding-bottom: 20px;
+}
+.flex{
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex > *{
+  min-width: 8%;
+  font-size: 22px;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+.box13 {
+    padding: 0.5em 1em;
+    margin: 15px 0;
+    color: #FFF;
+    background: #6eb7ff;
+    border-bottom: solid 6px #3f87ce;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+.box13 p {
+    margin: 0;
+    padding: 0;
+
+}
+.box14 {
+    padding: 0.5em 1em;
+    margin: 15px 0;
+    color: #FFF;
+    background: #00FF00;
+    border-radius: 9px;
 }

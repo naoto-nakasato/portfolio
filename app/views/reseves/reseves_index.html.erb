@@ -9,15 +9,34 @@
     <li><%= link_to "ログアウト", destroy_man_session_path, method: :DELETE %></li>
   </ul>
 </header>
-  <div class="col-md-offset-2 col-md-8">
-    <% @reseves.each do |reseve| %>
-      <div class="col-md-4">
-        <h3>
-        <%= reseve.place %>
-        <%= "#{reseve.people}人"%>
-        <%= reseve.date_time %>
-        <%= reseve.age %>
-        <%= "#{reseve.stay_time}時間" %>
-        </h3>
-      </div>
-    <% end %>
+<div class="show-hero-wrapper text-center">
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>予約一覧</h1>
+  <% @reseves.each do |reseve| %>
+    <div class="flex">
+      <h3>
+        <li>
+          <div class="box13">日付</div><%= reseve.date_time %>
+        </li>
+        <li>
+          <div class="box13">場所</div><%= reseve.place %>
+        </li>
+        <li>
+          <div class="box13">人数</div><%= "#{reseve.people}人"%>
+        </li>
+        <li>
+          <div class="box13">年齢</div><%= reseve.age %>
+        </li>
+        <li>
+          <div class="box13">時間</div><%= "#{reseve.stay_time}時間" %>
+        </li>
+        <li>
+          <div class="box14"><%= link_to "予約取消" %></div>
+        </li>
+      </h3>
+    </div>
+  <% end %>
+</div>

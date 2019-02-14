@@ -2,11 +2,6 @@ class PostsController < ApplicationController
 
   def show
     @man = Man.find(params[:id])
-#############################
-#############################
-
-
-
   end
 
   def stripe_create

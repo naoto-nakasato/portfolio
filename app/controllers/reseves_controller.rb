@@ -8,7 +8,7 @@ class ResevesController < ApplicationController
     @reseve = Reseve.new(reseve_params)
     @reseve.date_time = (params[:date]+" "+params[:time]).in_time_zone
     if @reseve.save
-      redirect_to men_mypage_path(reseve_params[:man_id]),notice: "予約が完了しました。"
+      redirect_to men_mypage_path(reseve_params[:man_id]),notice: "予約が完了しました"
     else
       render :new
     end
@@ -19,7 +19,9 @@ class ResevesController < ApplicationController
   end
 
   def destroy
-
+    @reseve = Reseve.find_by(id: params[:id])
+    @reseve.destroy
+    redirect_to men_reseves_path(reseve_params[:man_id]),notice: "予約を取り消しました"
   end
 
   def reseves_index
